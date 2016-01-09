@@ -1,19 +1,19 @@
 Summary:	Test suite for libfabric API
 Summary(pl.UTF-8):	Zestaw testów dla API libfabric
 Name:		fabtests
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	https://www.openfabrics.org/downloads/ofi/%{name}-%{version}.tar.bz2
-# Source0-md5:	79e33bf0b8046ed0b904ad647a21ec6d
+# Source0-md5:	9ef72c7692120cb80a0eebfec52411db
 URL:		https://github.com/ofiwg/fabtests
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	libfabric-devel >= 1.1.1
+BuildRequires:	libfabric-devel >= 1.2.0
 BuildRequires:	libtool >= 2:2
 BuildRequires:	sed >= 4.0
-Requires:	libfabric >= 1.1.1
+Requires:	libfabric >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
