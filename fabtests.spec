@@ -1,19 +1,20 @@
 Summary:	Test suite for libfabric API
 Summary(pl.UTF-8):	Zestaw testów dla API libfabric
 Name:		fabtests
-Version:	1.2.0
+Version:	1.3.0
 Release:	1
 License:	BSD or GPL v2
 Group:		Libraries
-Source0:	https://www.openfabrics.org/downloads/ofi/%{name}-%{version}.tar.bz2
-# Source0-md5:	9ef72c7692120cb80a0eebfec52411db
+#Source0Download: https://github.com/ofiwg/fabtests/releases
+Source0:	https://github.com/ofiwg/fabtests/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	2ef01a2bff625b1cf1fcc9891e648866
 URL:		https://github.com/ofiwg/fabtests
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	libfabric-devel >= 1.2.0
+BuildRequires:	libfabric-devel >= 1.3.0
 BuildRequires:	libtool >= 2:2
 BuildRequires:	sed >= 4.0
-Requires:	libfabric >= 1.2.0
+Requires:	libfabric >= 1.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -59,10 +60,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/fi_msg_pingpong
 %attr(755,root,root) %{_bindir}/fi_rc_pingpong
 %attr(755,root,root) %{_bindir}/fi_rdm_cntr_pingpong
-%attr(755,root,root) %{_bindir}/fi_rdm_inject_pingpong
 %attr(755,root,root) %{_bindir}/fi_rdm_pingpong
+%attr(755,root,root) %{_bindir}/fi_rdm_shared_av
+%attr(755,root,root) %{_bindir}/fi_rdm_tagged_bw
 %attr(755,root,root) %{_bindir}/fi_rdm_tagged_pingpong
-%attr(755,root,root) %{_bindir}/fi_ud_pingpong
 %attr(755,root,root) %{_bindir}/fi_ubertest
 %attr(755,root,root) %{_bindir}/rft_yaml_to_junit_xml
+%{_datadir}/fabtests
 %{_mandir}/man7/fabtests.7*
